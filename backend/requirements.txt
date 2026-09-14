@@ -1,0 +1,7 @@
+streamlit
+sqlalchemy
+pydantic
+email-validator
+pandas
+reportlabfastapi
+uvicorn
