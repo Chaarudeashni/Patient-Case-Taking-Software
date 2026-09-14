@@ -1,7 +1,7 @@
-streamlit
+fastapi
+uvicorn
 sqlalchemy
 pydantic
 email-validator
-pandas
-reportlabfastapi
-uvicorn
+bcrypt
+reportlab
