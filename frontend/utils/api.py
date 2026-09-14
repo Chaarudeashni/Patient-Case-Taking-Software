@@ -5,7 +5,7 @@ API_URL = os.getenv("PATIENT_API_URL", "http://127.0.0.1:8000")
 
 def _request(method, path, **kwargs):
     try:
-        r=requests.request(method, f"{API_URL}{path}", timeout=10, **kwargs)
+        r=requests.request(method, f"{API_URL}{path}", timeout=60, **kwargs)
         if not r.ok:
             try: detail=r.json().get("detail", r.text)
             except Exception: detail=r.text
