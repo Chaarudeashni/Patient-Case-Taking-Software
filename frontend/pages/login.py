@@ -129,9 +129,9 @@ with st.container(border=True):
         if image_path.exists():
 
             st.image(
-                str(image_path),
-                use_column_width=True,
-            )
+    str(image_path),
+    use_container_width=True,
+)
 
         else:
 
