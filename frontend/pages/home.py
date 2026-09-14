@@ -103,7 +103,7 @@ with image_column:
 
         st.image(
             str(image_path),
-            use_column_width=True,
+            use_container_width=True,
         )
 
     else:
