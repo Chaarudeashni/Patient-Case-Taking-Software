@@ -2,7 +2,7 @@
 // API CONFIGURATION
 // =========================================================
 
-const API_BASE_URL = "http://127.0.0.1:8000";
+const API_BASE_URL = "https://patient-case-taking-software-8sfq.onrender.com";
 
 
 // =========================================================
