@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+*.pyo
+
+.venv/
+venv/
+env/
+
+*.log
+
+db/data/*.db
+backend/data/*.db
+
+frontend/js/New Text Document.txt
+
+.DS_Store
+Thumbs.db

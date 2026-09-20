@@ -1,0 +1,615 @@
+<!-- ============================================================
+     FILE: frontend_web/home.html
+     ============================================================ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Patient Case Taking Software - Home
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body class="dashboard-page">
+
+<div class="app-layout">
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-brand">
+
+            <div class="sidebar-logo">
+                ✦
+            </div>
+
+            <div>
+                <h2>Patient Case</h2>
+                <span>Taking Software</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a
+                href="home.html"
+                class="nav-item active"
+            >
+                <span>⌂</span>
+                <span>Home</span>
+            </a>
+
+
+            <a
+                href="patients.html"
+                class="nav-item"
+            >
+                <span>♙</span>
+                <span>Patients</span>
+            </a>
+
+
+            <a
+                href="new-case.html"
+                class="nav-item"
+            >
+                <span>＋</span>
+                <span>New Case</span>
+            </a>
+
+
+            <a
+                href="clinical-records.html"
+                class="nav-item"
+            >
+                <span>▣</span>
+                <span>Clinical Records</span>
+            </a>
+
+
+            <a
+                href="follow-ups.html"
+                class="nav-item"
+            >
+                <span>↻</span>
+                <span>Follow-ups</span>
+            </a>
+
+
+            <a
+                href="appointments.html"
+                class="nav-item"
+            >
+                <span>□</span>
+                <span>Appointments</span>
+            </a>
+
+
+            <a
+                href="reports.html"
+                class="nav-item"
+            >
+                <span>▤</span>
+                <span>Reports</span>
+            </a>
+
+
+            <a
+                href="settings.html"
+                class="nav-item"
+            >
+                <span>⚙</span>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="holistic-mini">
+
+                <div class="holistic-icon">
+                    ✿
+                </div>
+
+                <div>
+                    <strong>
+                        Holistic Healthcare
+                    </strong>
+
+                    <span>
+                        Modern medicine meets AYUSH
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+
+        <!-- HEADER -->
+
+        <header class="topbar">
+
+            <div class="search-box">
+
+                <span>⌕</span>
+
+                <input
+                    type="text"
+                    placeholder="Search patients, cases, or anything..."
+                    id="globalSearch"
+                >
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <button class="icon-button">
+                    ♧
+                    <span class="notification-dot"></span>
+                </button>
+
+
+                <div class="doctor-profile">
+
+                    <div class="doctor-avatar">
+                        DR
+                    </div>
+
+                    <div class="doctor-info">
+
+                        <strong id="doctorName">
+                            Clinician
+                        </strong>
+
+                        <span>
+                            Clinician
+                        </span>
+
+                    </div>
+
+                    <span class="profile-arrow">
+                        ▼
+                    </span>
+
+                </div>
+
+
+                <button
+                    class="logout-button"
+                    id="logoutButton"
+                >
+                    Logout
+                </button>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- PAGE -->
+
+        <section class="dashboard-content">
+
+
+            <div class="welcome-row">
+
+                <div>
+
+                    <span class="eyebrow">
+                        PATIENT CARE DASHBOARD
+                    </span>
+
+                    <h1>
+                        Good Morning,
+                        <span id="welcomeDoctor">
+                            Doctor
+                        </span>
+                    </h1>
+
+                    <p>
+                        Here's what's happening with your patients today.
+                    </p>
+
+                </div>
+
+
+                <div class="current-date" id="currentDate">
+                </div>
+
+            </div>
+
+
+
+            <!-- STAT CARDS -->
+
+            <div class="stats-grid">
+
+
+                <div class="stat-card blue">
+
+                    <div class="stat-top">
+
+                        <div class="stat-icon">
+                            ♙
+                        </div>
+
+                    </div>
+
+                    <span class="stat-label">
+                        Total Patients
+                    </span>
+
+                    <strong
+                        class="stat-number"
+                        id="totalPatients"
+                    >
+                        0
+                    </strong>
+
+                    <span class="stat-caption">
+                        Registered patients
+                    </span>
+
+                </div>
+
+
+
+                <div class="stat-card green">
+
+                    <div class="stat-top">
+
+                        <div class="stat-icon">
+                            ▣
+                        </div>
+
+                    </div>
+
+                    <span class="stat-label">
+                        Active Cases
+                    </span>
+
+                    <strong
+                        class="stat-number"
+                        id="activeCases"
+                    >
+                        0
+                    </strong>
+
+                    <span class="stat-caption">
+                        Ongoing clinical cases
+                    </span>
+
+                </div>
+
+
+
+                <div class="stat-card purple">
+
+                    <div class="stat-top">
+
+                        <div class="stat-icon">
+                            □
+                        </div>
+
+                    </div>
+
+                    <span class="stat-label">
+                        Today's Appointments
+                    </span>
+
+                    <strong
+                        class="stat-number"
+                        id="todayAppointments"
+                    >
+                        0
+                    </strong>
+
+                    <span class="stat-caption">
+                        Scheduled appointments
+                    </span>
+
+                </div>
+
+
+
+                <div class="stat-card orange">
+
+                    <div class="stat-top">
+
+                        <div class="stat-icon">
+                            ◷
+                        </div>
+
+                    </div>
+
+                    <span class="stat-label">
+                        Pending Follow-ups
+                    </span>
+
+                    <strong
+                        class="stat-number"
+                        id="pendingFollowups"
+                    >
+                        0
+                    </strong>
+
+                    <span class="stat-caption">
+                        Require attention
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- MAIN GRID -->
+
+            <div class="dashboard-grid">
+
+
+                <!-- RECENT PATIENTS -->
+
+                <section class="dashboard-card recent-patients">
+
+                    <div class="card-header">
+
+                        <div>
+                            <h2>
+                                Recent Patients
+                            </h2>
+
+                            <p>
+                                Recently registered patients
+                            </p>
+                        </div>
+
+                        <a href="patients.html">
+                            View All
+                        </a>
+
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+                                    <th>Patient ID</th>
+                                    <th>Name</th>
+                                    <th>Gender</th>
+                                    <th>Last Visit</th>
+                                    <th>Status</th>
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="recentPatientsTable">
+
+                                <tr>
+                                    <td colspan="5">
+                                        Loading patients...
+                                    </td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- UPCOMING APPOINTMENTS -->
+
+                <section class="dashboard-card appointments-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <h2>
+                                Upcoming Appointments
+                            </h2>
+
+                            <p>
+                                Today's schedule
+                            </p>
+                        </div>
+
+                        <a href="appointments.html">
+                            View All
+                        </a>
+
+                    </div>
+
+
+                    <div
+                        class="appointment-list"
+                        id="appointmentList"
+                    >
+
+                        <div class="loading-state">
+                            Loading appointments...
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- CLINICAL INSIGHT -->
+
+                <section class="dashboard-card insight-card">
+
+                    <div class="insight-content">
+
+                        <span class="eyebrow">
+                            CLINICAL INSIGHT
+                        </span>
+
+                        <h2>
+                            Holistic Healthcare,
+                            <br>
+                            Better Patient Outcomes
+                        </h2>
+
+                        <p>
+                            Combine structured case taking, modern
+                            clinical information and AYUSH history
+                            to support patient-centred care.
+                        </p>
+
+                        <a
+                            href="clinical-records.html"
+                            class="secondary-button"
+                        >
+                            Explore Clinical Records
+                        </a>
+
+                    </div>
+
+
+                    <div class="insight-decoration">
+                        ✿
+                    </div>
+
+                </section>
+
+
+
+                <!-- RECENT ACTIVITY -->
+
+                <section class="dashboard-card activity-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <h2>
+                                Recent Activity
+                            </h2>
+
+                            <p>
+                                Latest system activity
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="activity-list"
+                        id="activityList"
+                    >
+
+                        <div class="activity-item">
+
+                            <div class="activity-icon">
+                                ✓
+                            </div>
+
+                            <div>
+                                <strong>
+                                    Dashboard loaded
+                                </strong>
+
+                                <span>
+                                    Welcome to Patient Case Taking Software
+                                </span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="activity-item">
+
+                            <div class="activity-icon">
+                                ♙
+                            </div>
+
+                            <div>
+                                <strong>
+                                    Patient management
+                                </strong>
+
+                                <span>
+                                    Access your registered patients
+                                </span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="activity-item">
+
+                            <div class="activity-icon">
+                                ✦
+                            </div>
+
+                            <div>
+                                <strong>
+                                    Clinical records
+                                </strong>
+
+                                <span>
+                                    Manage AI and AYUSH information
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="js/home.js"></script>
+
+</body>
+</html>

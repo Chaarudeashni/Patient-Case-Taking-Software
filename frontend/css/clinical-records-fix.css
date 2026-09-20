@@ -1,0 +1,33 @@
+
+.patient-list-item,
+.case-list-item {
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    border: 0;
+    background: transparent;
+    padding: 12px 14px;
+    margin: 0;
+}
+
+.patient-list-item.active,
+.case-list-item:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.case-list-main {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.case-list-status {
+    margin-top: 4px;
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+.empty-state {
+    padding: 16px;
+    opacity: 0.7;
+}
