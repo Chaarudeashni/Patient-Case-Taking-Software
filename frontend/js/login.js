@@ -2,7 +2,7 @@
 // LOGIN
 // =========================================================
 
-const LOGIN_API_URL = "http://127.0.0.1:8000/login";
+const LOGIN_API_URL = "https://patient-case-taking-software-8sfq.onrender.com/login";
 
 window.isLoggedIn = function () {
     return localStorage.getItem("currentUser") !== null;
