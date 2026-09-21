@@ -50,6 +50,36 @@ app.add_middleware(
 def startup():
     create_tables()
 
+    db = next(get_db())
+
+    try:
+        existing_user = (
+            db.query(User)
+            .filter(User.username == "demo_clinician")
+            .first()
+        )
+
+        if not existing_user:
+            password_hash = bcrypt.hashpw(
+                b"demo123",
+                bcrypt.gensalt()
+            ).decode("utf-8")
+
+            user = User(
+                username="demo_clinician",
+                email="demo_clinician@example.com",
+                password_hash=password_hash,
+                role="clinician"
+            )
+
+            db.add(user)
+            db.commit()
+
+            print("Default clinician created.")
+
+    finally:
+        db.close()
+
 
 # ============================================================
 # PATIENT SCHEMAS
