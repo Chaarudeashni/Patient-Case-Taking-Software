@@ -95,7 +95,7 @@ function renderSettingsPage() {
                 '<div class="settings-row">' +
                     '<div>' +
                         '<strong>Backend API</strong>' +
-'<p>https://patient-case-taking-software-8sfq.onrender.com</p>'
+                        '<p>https://patient-case-taking-software-8sfq.onrender.com</p>' +
                     '</div>' +
                     '<span class="badge badge-primary" id="apiStatusBadge">' +
                         'Checking...' +
@@ -445,7 +445,7 @@ function checkApiStatus() {
 
 
     fetch(
-        "http://127.0.0.1:8000/health"
+        "https://patient-case-taking-software-8sfq.onrender.com/health"
     )
 
     .then(
