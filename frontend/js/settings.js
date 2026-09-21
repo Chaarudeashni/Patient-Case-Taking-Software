@@ -95,7 +95,7 @@ function renderSettingsPage() {
                 '<div class="settings-row">' +
                     '<div>' +
                         '<strong>Backend API</strong>' +
-                        '<p>http://127.0.0.1:8000</p>' +
+'<p>https://patient-case-taking-software-8sfq.onrender.com</p>'
                     '</div>' +
                     '<span class="badge badge-primary" id="apiStatusBadge">' +
                         'Checking...' +
